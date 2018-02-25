@@ -10,6 +10,7 @@ var express    = require("express"),
     Comment    = require("./models/comment"),
     User       = require("./models/user"),
     seedDB     = require("./seeds");
+    require('dotenv').config();
 
 var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
@@ -48,7 +49,7 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-const port =  process.env.PORT || 3000
+const port =  process.env.PORT || process.env.LOCAL_PORT
 app.listen(port, process.env.IP, function(){
   console.log("Serving YelpCamp on Port 3000");
 });
