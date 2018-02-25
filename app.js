@@ -51,5 +51,5 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 
 const port =  process.env.PORT || process.env.LOCAL_PORT
 app.listen(port, process.env.IP, function(){
-  console.log("Serving YelpCamp on Port 3000");
+  console.log("Serving YelpCamp");
 });
